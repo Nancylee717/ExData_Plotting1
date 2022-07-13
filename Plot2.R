@@ -8,5 +8,5 @@ hpc_2007 <- hpc[hpc$Date=="1/2/2007"| hpc$Date=="2/2/2007",]
 View(hpc_2007)
 hpc_2007$DateTime <-  as.POSIXlt(paste(hpc_2007$Date, hpc_2007$Time), format= "%d/%m/%Y %H:%M:%S",tz = "UTC")
 png("Plot2.png",width=480,height=480)
-plot(hpc_2007$Time ,as.numeric(hpc_2007$Global_active_power),type="l",xlab=" ",ylab = "Global Active Power(Kilowatts)",main="Global Active Power Vs Time")
+plot(hpc_2007$DateTime ,as.numeric(hpc_2007$Global_active_power),type="l",xlab=" ",ylab = "Global Active Power(Kilowatts)",main="Global Active Power Vs Time")
 dev.off()
